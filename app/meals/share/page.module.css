@@ -96,3 +96,8 @@
   color: #979797;
   cursor: not-allowed;
 }
+
+.error {
+  color: #bb1717;
+  font-weight: bold;
+}
