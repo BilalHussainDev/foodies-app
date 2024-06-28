@@ -1,0 +1,153 @@
+/* ========== Navigation Large ========== */
+.navigationLarge {
+  display: block;
+}
+
+@media only screen and (max-width: 900px) {
+  .navigationLarge {
+    display: none;
+  }
+}
+
+.navigationLarge ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 3rem;
+  font-size: 1.25rem;
+}
+
+/* ========== Navigation Small ========== */
+.navigationSmall {
+  display: none;
+}
+
+@media only screen and (max-width: 900px) {
+  .navigationSmall {
+    display: block;
+  }
+}
+
+/* ========== Hidden Checkbox ========== */
+.checkbox {
+  display: none;
+}
+
+/* ========== Navigation Button ========== */
+.navButton {
+  background-color: #ddd6cb;
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 2rem;
+  right: 5%;
+  z-index: 2000;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+  text-align: center;
+  cursor: pointer;
+}
+
+/* ========== Navigation Icon ========== */
+.navIcon {
+  position: relative;
+  margin-top: 36px;
+}
+
+.navIcon::before {
+  top: -0.7rem;
+}
+
+.navIcon::after {
+  top: 0.7rem;
+}
+
+.navIcon::before,
+.navIcon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all 0.2s;
+}
+
+.navIcon,
+.navIcon::before,
+.navIcon::after {
+  display: inline-block;
+  width: 2rem;
+  height: 2px;
+  background-color: #333;
+}
+
+.navButton:hover .navIcon::before {
+  top: -0.8rem;
+}
+
+.navButton:hover .navIcon::after {
+  top: 0.8rem;
+}
+
+.checkbox:checked + .navButton .navIcon {
+  background-color: transparent;
+}
+
+.checkbox:checked + .navButton .navIcon::before {
+  top: 0;
+  transform: rotate(135deg);
+}
+
+.checkbox:checked + .navButton .navIcon::after {
+  top: 0;
+  transform: rotate(-135deg);
+}
+
+/* ========== Hidden background behind button ========== */
+.navBackground {
+  background-image: radial-gradient(#8f3a09, #59453c);
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 2.5rem;
+  right: 6%;
+  z-index: 1000;
+  transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.checkbox:checked ~ .navBackground {
+  transform: scale(80);
+}
+
+/* ========== Main Navigation ========== */
+.navigation {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1050;
+  opacity: 0;
+  width: 0;
+  transition: all 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.checkbox:checked ~ .navigation {
+  opacity: 1;
+  width: 100%;
+}
+
+.navigation ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+  width: inherit;
+  padding: 0;
+}
+
+.navigation li {
+  margin: 1rem;
+  font-size: 1.25rem;
+}
