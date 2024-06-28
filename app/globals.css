@@ -18,6 +18,16 @@ body {
   margin-top: 5rem;
   text-align: center;
   min-height: 80vh;
+  width: 90%;
+  max-width: 75rem;
+  margin: 5rem auto 5rem auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .not-found,
+  .error {
+    margin-top: 0.5rem;
+  }
 }
 
 .not-found h1,
@@ -34,6 +44,13 @@ body {
   background-size: cover;
   background-position: center;
   font-family: "Montserrat", sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+  .not-found h1,
+  .error h1 {
+    font-size: 3rem;
+  }
 }
 
 .not-found p,
