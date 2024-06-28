@@ -1,15 +1,28 @@
 .header {
   gap: 3rem;
-  margin: 3.5rem auto 5rem auto;
-  width: 90%;
-  max-width: 75rem;
   color: #ddd6cb;
   font-size: 1.5rem;
   text-align: center;
+  width: 90%;
+  max-width: 75rem;
+  margin: 3.5rem auto 5rem auto;
+}
+
+@media only screen and (max-width: 400px) {
+  .header {
+    margin: 0.5rem auto 3rem auto;
+  }
 }
 
 .header h1 {
   font-family: "Montserrat", sans-serif;
+}
+
+@media only screen and (max-width: 400px) {
+  .header h1 {
+    font-size: 2rem;
+    margin-top: 0rem;
+  }
 }
 
 .highlight {
@@ -31,6 +44,12 @@
   font-size: 2rem;
   margin-bottom: 3rem;
   color: #ddd6cb;
+}
+
+@media only screen and (max-width: 400px) {
+  .main h2 {
+    font-size: 1.75rem;
+  }
 }
 
 .perks {
