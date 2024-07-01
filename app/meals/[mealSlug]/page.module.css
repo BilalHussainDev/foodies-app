@@ -1,15 +1,10 @@
 .header {
   display: flex;
   gap: 2rem;
-  max-width: 80rem;
-  padding: 2.5rem 4rem;
+  padding: 2.5rem 0;
+  width: 90%;
+  max-width: 75rem;
   margin: 0 auto;
-}
-
-@media (max-width: 1200px) {
-  .header {
-    padding: 2.5rem 5%;
-  }
 }
 
 .image {
