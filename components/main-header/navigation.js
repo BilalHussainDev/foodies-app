@@ -36,8 +36,6 @@ export default function Navigation() {
           <span className={classes.navIcon}>&nbsp;</span>
         </label>
 
-        <div className={classes.navBackground}>&nbsp;</div>
-
         <nav className={classes.navigation}>
           <ul>
             <li onClick={handleLinkClick}>

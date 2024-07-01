@@ -37,11 +37,11 @@
 /* ========== Navigation Button ========== */
 .navButton {
   background-color: #ddd6cb;
-  height: 4.5rem;
-  width: 4.5rem;
+  height: 4rem;
+  width: 4rem;
   border-radius: 50%;
   position: fixed;
-  top: 2rem;
+  top: 38px;
   right: 5%;
   z-index: 2000;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
@@ -52,7 +52,7 @@
 /* ========== Navigation Icon ========== */
 .navIcon {
   position: relative;
-  margin-top: 36px;
+  margin-top: 31px;
 }
 
 .navIcon::before {
@@ -80,14 +80,6 @@
   background-color: #333;
 }
 
-.navButton:hover .navIcon::before {
-  top: -0.8rem;
-}
-
-.navButton:hover .navIcon::after {
-  top: 0.8rem;
-}
-
 .checkbox:checked + .navButton .navIcon {
   background-color: transparent;
 }
@@ -102,52 +94,42 @@
   transform: rotate(-135deg);
 }
 
-/* ========== Hidden background behind button ========== */
-.navBackground {
-  background-image: radial-gradient(#8f3a09, #59453c);
-  height: 3.5rem;
-  width: 3.5rem;
-  border-radius: 50%;
-  position: fixed;
-  top: 2.5rem;
-  right: 6%;
-  z-index: 1000;
-  transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1);
-}
-
-.checkbox:checked ~ .navBackground {
-  transform: scale(80);
-}
-
 /* ========== Main Navigation ========== */
 .navigation {
-  height: 100vh;
+  height: 100%;
+  width: 0;
   position: fixed;
+  z-index: 10;
   top: 0;
   right: 0;
-  z-index: 1050;
-  opacity: 0;
-  width: 0;
-  transition: all 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  background-image: linear-gradient(to top right, #59453c 0%, #8f3a09 100%);
+  overflow-x: hidden;
+  transition: all 0.4s ease-out;
 }
 
 .checkbox:checked ~ .navigation {
-  opacity: 1;
   width: 100%;
 }
 
 .navigation ul {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   list-style: none;
   text-align: center;
-  width: inherit;
+  width: 280px;
   padding: 0;
 }
 
 .navigation li {
   margin: 1rem;
+  font-size: 0;
+  transition: all 0.4s ease-out;
+  opacity: 0;
+}
+
+.checkbox:checked ~ .navigation li {
   font-size: 1.25rem;
+  opacity: 1;
 }
